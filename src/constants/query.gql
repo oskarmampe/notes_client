@@ -1,0 +1,49 @@
+mutation CaptureEmail($email: String!){
+    captureEmail(email: $email) {
+        id
+        email
+    }
+}
+
+mutation Signup($id: String!, $firstName: String!, $lastName: String!, $password:String!) {
+  signUp(id: $id, firstName: $firstName, lastName: $lastName, password: $password){
+    token
+    user {
+     	id
+    	email
+    }
+  }
+}
+
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
+      id
+      email
+    }
+  }
+}
+
+query GetTeam {
+  getTeam {
+    id
+    name
+  }
+}
+
+fragment FolderFields on Folder {
+    id
+    name
+    parent
+    description
+    shareWith
+}
+
+query GetFolders($parent: String!){  
+    getFolders(parent: $parent) { ...FolderFields }
+}
+
+query GetFolder($id: String!) {
+    getFolder(id: $id) { ...FolderFields }
+}
