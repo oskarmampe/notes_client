@@ -3,7 +3,7 @@
     <el-header>
     </el-header>
 <el-main>
-      <div class="container-center">
+      <div>
         <h2>Log in</h2>
         
         <div v-if="error" class="error">

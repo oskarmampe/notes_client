@@ -23,7 +23,7 @@
         </el-form>
 
         <div>
-          <span>Already have an enamel account?</span>
+          <span>Already have an account?</span>
           <router-link :to="{name: 'login'}" class="link">Log in</router-link>
         </div>
 
